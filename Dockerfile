@@ -14,11 +14,7 @@ WORKDIR /opt/ome_web_plugins/
 RUN git clone https://github.com/crs4/ome_seadragon.git --branch master --single-branch --depth 1 \
     && chown -R omero-web /opt/ome_web_plugins/
 
-ADD 80-configure-ome_seadragon.sh /startup/
-
-# ENV PYTHONPATH "${PYTHONPATH}:/opt/ome_seadragon/"
-
-# RUN pip install corsheaders
+ADD 80-configure-ome_seadragon.sh 81-configure-corsheaders.sh /startup/
 
 USER omero-web
 
@@ -31,4 +27,4 @@ ADD package.json /opt/ome_web_plugins/ome_seadragon/
 
 ENV PYTHONPATH "/opt/ome_web_plugins/:${PYTHONPATH}"
 
-RUN pip install --user --upgrade pip openslide-python Pillow lxml requests
+RUN pip install --user --upgrade pip openslide-python Pillow lxml requests django-cors-headers
