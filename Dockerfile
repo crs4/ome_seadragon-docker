@@ -3,7 +3,7 @@ LABEL maintainer="luca.lianas@crs4.it"
 
 USER root
 
-RUN yum -y install git gcc-c++ make openslide \
+RUN yum -y install git gcc-c++ openslide \
     && curl -sL https://rpm.nodesource.com/setup_8.x | bash - \
     && yum -y install nodejs \
     && npm install -g grunt
