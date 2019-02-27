@@ -15,7 +15,8 @@ RUN git clone https://github.com/crs4/ome_seadragon.git --branch master --single
     && chown -R omero-web /opt/ome_web_plugins/
 
 ADD 70-enable-ome_seadragon.sh \
-    71-enable-django_cors_headers.sh /startup/
+    71-enable-django_cors_headers.sh \
+    80-create-ome-public-user.sh /startup/
 
 USER omero-web
 
