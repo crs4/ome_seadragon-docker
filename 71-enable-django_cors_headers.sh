@@ -5,7 +5,6 @@ set -eu
 export PATH="/opt/omero/web/venv/bin:$PATH"
 python=/opt/omero/web/venv/bin/python
 omero=/opt/omero/web/OMERO.web/bin/omero
-cd /opt/omero/web
 
 exec $python $omero config append omero.web.apps '"corsheaders"'
 exec $python $omero config append omero.web.middleware '{"index": 0.5, "class": "corsheaders.middleware.CorsMiddleware"}'
