@@ -9,6 +9,7 @@ omero=/opt/omero/web/OMERO.web/bin/omero
 ROOTPASS="${ROOTPASS:-omero}"
 OMEROHOST="${OMEROHOST:-}"
 OME_PUBLIC_GROUP="${OME_PUBLIC_GROUP:-ome_public_data}"
+OME_PUBLIC_USER_NAME="${OME_PUBLIC_USER_NAME:-ome_public}"
 OME_PUBLIC_USER_PASS="${OME_PUBLIC_USER_PASS:-omero}"
 
 # create a group for the public user
@@ -19,5 +20,5 @@ exec $python $omero group add --ignore-existing --server "$OMEROHOST" --user roo
 #create public user
 echo "Creating public user"
 exec $python $omero user add --ignore-existing --server "$OMEROHOST" --user root \
-                             --password "$ROOTPASS" ome_public OME PUBLIC \
+                             --password "$ROOTPASS" "$OME_PUBLIC_USER_NAME" OME PUBLIC \
                              --group-name "$OME_PUBLIC_GROUP" --userpassword "$OME_PUBLIC_USER_PASS"
