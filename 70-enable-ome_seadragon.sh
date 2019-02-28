@@ -8,4 +8,4 @@ omero=/opt/omero/web/OMERO.web/bin/omero
 cd /opt/omero/web
 
 echo "Enable ome_seadragon plugin"
-exec $python $omero config append omero.web.apps '"ome_seadragon"'
+$python $omero config append omero.web.apps '"ome_seadragon"'
