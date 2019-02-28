@@ -14,11 +14,11 @@ OME_PUBLIC_USER_PASS="${OME_PUBLIC_USER_PASS:-omero}"
 
 # create a group for the public user
 echo "Creating default public user group"
-exec $python $omero group add --ignore-existing --server "$OMEROHOST" --user root \
-                              --password "$ROOTPASS" --type read-only "$OME_PUBLIC_GROUP"
+$python $omero group add --ignore-existing --server "$OMEROHOST" --user root \
+                         --password "$ROOTPASS" --type read-only "$OME_PUBLIC_GROUP"
 
 #create public user
 echo "Creating public user"
-exec $python $omero user add --ignore-existing --server "$OMEROHOST" --user root \
-                             --password "$ROOTPASS" "$OME_PUBLIC_USER_NAME" OME PUBLIC \
-                             --group-name "$OME_PUBLIC_GROUP" --userpassword "$OME_PUBLIC_USER_PASS"
+$python $omero user add --ignore-existing --server "$OMEROHOST" --user root \
+                        --password "$ROOTPASS" "$OME_PUBLIC_USER_NAME" OME PUBLIC \
+                        --group-name "$OME_PUBLIC_GROUP" --userpassword "$OME_PUBLIC_USER_PASS"
