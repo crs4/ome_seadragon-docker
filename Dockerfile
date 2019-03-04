@@ -14,12 +14,6 @@ WORKDIR /opt/ome_web_plugins/
 RUN git clone https://github.com/crs4/ome_seadragon.git --branch master --single-branch --depth 1 \
     && chown -R omero-web /opt/ome_web_plugins/
 
-ADD 70-enable-ome_seadragon.sh \
-    71-enable-django_cors_headers.sh \
-    80-create-ome-public-user.sh \
-    81-setup-ome-public-user.sh \
-    82-setup-redis-cache.sh /startup/
-
 USER omero-web
 
 # install ome_seadragon_cache and remove source files
@@ -38,7 +32,17 @@ RUN npm install \
 # TODO: update ome_seadragon repository in order to fix NPM problem
 ADD package.json /opt/ome_web_plugins/ome_seadragon/
 
-ENV PYTHONPATH "/opt/ome_web_plugins/:${PYTHONPATH}"
-
 RUN pip install --user --upgrade pip openslide-python Pillow lxml \
     requests django-cors-headers
+
+USER root
+
+ADD 70-enable-ome_seadragon.sh \
+    71-enable-django_cors_headers.sh \
+    80-create-ome-public-user.sh \
+    81-setup-ome-public-user.sh \
+    82-setup-redis-cache.sh /startup/
+
+USER omero_web
+
+ENV PYTHONPATH "/opt/ome_web_plugins/:${PYTHONPATH}"
