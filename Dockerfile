@@ -29,9 +29,6 @@ WORKDIR /opt/ome_web_plugins/ome_seadragon/
 RUN npm install \
     && grunt
 
-# TODO: update ome_seadragon repository in order to fix NPM problem
-ADD package.json /opt/ome_web_plugins/ome_seadragon/
-
 RUN pip install --user --upgrade pip openslide-python Pillow lxml \
     requests django-cors-headers
 
