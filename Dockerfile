@@ -16,15 +16,6 @@ RUN git clone https://github.com/crs4/ome_seadragon.git --branch master --single
 
 USER omero-web
 
-# install ome_seadragon_cache and remove source files
-WORKDIR /tmp
-RUN git clone https://github.com/crs4/ome_seadragon_cache --branch master --single-branch --depth 1 \
-    && cd ome_seadragon_cache \
-    && pip install --user -r requirements.txt \
-    && python setup.py install --user \
-    && cd /tmp \
-    && rm -rf ome_seadragon_cache
-
 WORKDIR /opt/ome_web_plugins/ome_seadragon/
 RUN npm install \
     && grunt
