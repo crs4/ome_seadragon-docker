@@ -30,6 +30,6 @@ ADD 70-enable-ome_seadragon.sh \
     81-setup-ome-public-user.sh \
     82-setup-redis-cache.sh /startup/
 
-USER omero_web
+USER omero-web
 
 ENV PYTHONPATH "/opt/ome_web_plugins/:${PYTHONPATH}"
