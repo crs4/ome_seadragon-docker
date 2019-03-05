@@ -20,8 +20,7 @@ WORKDIR /opt/ome_web_plugins/ome_seadragon/
 RUN npm install \
     && grunt
 
-RUN pip install --user --upgrade pip openslide-python Pillow lxml \
-    requests django-cors-headers
+RUN pip install --user --upgrade -r requirements.txt
 
 USER root
 
