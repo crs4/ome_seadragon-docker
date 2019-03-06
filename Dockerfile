@@ -12,6 +12,7 @@ RUN mkdir /opt/ome_web_plugins/
 WORKDIR /opt/ome_web_plugins/
 
 RUN git clone https://github.com/crs4/ome_seadragon.git --branch master --single-branch --depth 1 \
+ARG OME_SEADRAGON_VERSION=0.6.12
     && chown -R omero-web /opt/ome_web_plugins/
 
 USER omero-web
