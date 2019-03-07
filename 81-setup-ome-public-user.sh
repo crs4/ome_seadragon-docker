@@ -15,3 +15,5 @@ $python $omero config set omero.web.public.user "$OME_PUBLIC_USER_NAME"
 $python $omero config set omero.web.public.password "$OME_PUBLIC_USER_PASS"
 $python $omero config set omero.web.public.url_filter '^/ome_seadragon'
 $python $omero config set omero.web.public.server_id 1
+
+$python $omero config set omero.web.ome_seadragon.ome_public_user "$OME_PUBLIC_USER_NAME"
