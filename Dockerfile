@@ -32,7 +32,9 @@ ADD 70-enable-ome_seadragon.sh \
     71-enable-django_cors_headers.sh \
     80-create-ome-public-user.sh \
     81-setup-ome-public-user.sh \
-    82-setup-redis-cache.sh /startup/
+    82-setup-redis-cache.sh \
+    83-setup-images-repository.sh \
+    84-setup-default-group.sh /startup/
 
 USER omero-web
 
