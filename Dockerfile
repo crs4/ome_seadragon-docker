@@ -28,7 +28,10 @@ RUN npm install \
 
 USER root
 
-COPY resources/70-enable-ome_seadragon.sh \
+COPY resources/wait-for-it.sh /usr/local/bin/
+
+COPY resources/40-wait-for-omero.sh \
+     resources/70-enable-ome_seadragon.sh \
      resources/71-enable-django_cors_headers.sh \
      resources/80-create-ome-public-user.sh \
      resources/81-setup-ome-public-user.sh \
