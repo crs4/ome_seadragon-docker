@@ -37,7 +37,8 @@ COPY resources/40-wait-for-omero.sh \
      resources/81-setup-ome-public-user.sh \
      resources/82-setup-redis-cache.sh \
      resources/83-setup-images-repository.sh \
-     resources/84-setup-default-group.sh /startup/
+     resources/84-setup-default-group.sh \
+     resources/85-setup-gateway-user.sh /startup/
 
 USER omero-web
 
