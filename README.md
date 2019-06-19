@@ -1,2 +1,2 @@
 # ome_seadragon-docker
-Docker image for ome-seadraogn
+Docker image for ome-seadragon
