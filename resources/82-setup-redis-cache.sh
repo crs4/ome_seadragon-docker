@@ -9,7 +9,7 @@ omero=/opt/omero/web/OMERO.web/bin/omero
 REDISHOST="${REDISHOST:-}"
 REDISPORT="${REDISPORT:-6379}"
 REDISDB="${REDISDB:-0}"
-CACHE_EXPIRE_TIME="${CACHE_EXPIRE_TIME:-{\"hours\": 8}}"
+CACHE_EXPIRE_TIME=${CACHE_EXPIRE_TIME:-\{\"hours\": 8\}}
 
 if [ -n "$REDISHOST" ]; then
     echo "Setup REDIS cache"
