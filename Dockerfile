@@ -1,4 +1,4 @@
-FROM openmicroscopy/omero-web:5.4.10
+FROM openmicroscopy/omero-web:5.5.1
 LABEL maintainer="luca.lianas@crs4.it"
 
 USER root
