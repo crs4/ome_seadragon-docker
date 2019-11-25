@@ -8,7 +8,7 @@ RUN yum -y install gcc-c++ openslide \
     && yum -y install nodejs \
     && npm install -g grunt
 
-ARG OME_SEADRAGON_VERSION=0.6.15
+ARG OME_SEADRAGON_VERSION=0.6.16
 
 RUN mkdir /opt/ome_web_plugins/ \
     && wget https://github.com/crs4/ome_seadragon/archive/v${OME_SEADRAGON_VERSION}.zip -P /opt/ome_web_plugins/ \
