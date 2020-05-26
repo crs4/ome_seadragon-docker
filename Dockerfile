@@ -1,14 +1,14 @@
-FROM openmicroscopy/omero-web:5.5.1
+FROM openmicroscopy/omero-web:5.6.3
 LABEL maintainer="luca.lianas@crs4.it"
 
 USER root
 
-RUN yum -y install gcc-c++ openslide \
-    && curl -sL https://rpm.nodesource.com/setup_8.x | bash - \
+RUN yum -y install gcc-c++ openslide wget unzip python3-devel \
+    && curl -sL https://rpm.nodesource.com/setup_10.x | bash - \
     && yum -y install nodejs \
     && npm install -g grunt
 
-ARG OME_SEADRAGON_VERSION=0.6.17
+ARG OME_SEADRAGON_VERSION=0.7.0
 
 RUN mkdir /opt/ome_web_plugins/ \
     && wget https://github.com/crs4/ome_seadragon/archive/v${OME_SEADRAGON_VERSION}.zip -P /opt/ome_web_plugins/ \
@@ -19,7 +19,7 @@ RUN mkdir /opt/ome_web_plugins/ \
 
 WORKDIR /opt/ome_web_plugins/ome_seadragon/
 
-RUN pip install --upgrade -r requirements.txt
+RUN /opt/omero/web/venv3/bin/pip install --upgrade -r requirements.txt
 
 USER omero-web
 
@@ -39,6 +39,8 @@ COPY resources/40-wait-for-omero.sh \
      resources/83-setup-images-repository.sh \
      resources/84-setup-default-group.sh \
      resources/85-setup-gateway-user.sh \
+     resources/86-setup-rendering-engines.sh \
+     resources/87-setup-deepzoom-properties.sh \
      resources/90-default-web-config-2.sh /startup/
 
 USER omero-web
