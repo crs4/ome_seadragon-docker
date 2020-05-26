@@ -39,6 +39,8 @@ COPY resources/40-wait-for-omero.sh \
      resources/83-setup-images-repository.sh \
      resources/84-setup-default-group.sh \
      resources/85-setup-gateway-user.sh \
+     resources/86-setup-rendering-engines.sh \
+     resources/87-setup-deepzoom-properties.sh \
      resources/90-default-web-config-2.sh /startup/
 
 USER omero-web
