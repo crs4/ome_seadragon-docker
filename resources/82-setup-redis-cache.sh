@@ -2,9 +2,9 @@
 
 set -eu
 
-export PATH="/opt/omero/web/venv/bin:$PATH"
-python=/opt/omero/web/venv/bin/python
-omero=/opt/omero/web/OMERO.web/bin/omero
+export PATH="/opt/omero/web/venv3/bin:$PATH"
+python=/opt/omero/web/venv3/bin/python
+omero=/opt/omero/web/venv3/bin/omero
 
 REDISHOST="${REDISHOST:-}"
 REDISPORT="${REDISPORT:-6379}"
