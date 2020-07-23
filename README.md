@@ -102,4 +102,4 @@ The server can be configured using the following environment variables:
 
 ## Examples
 
-A Docker compose example to run a completed ome_seadragon stack can be found [here](https://github.com/lucalianas/ome_seadragon_compose)
+A Docker compose example to run a complete ome_seadragon stack can be found [here](https://github.com/lucalianas/ome_seadragon_compose)
