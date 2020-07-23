@@ -30,6 +30,8 @@ The server can be configured using the following environment variables:
 
 **OME_SEADRAGON_COOKIE** *(default ome_seadragon_web)* the cookie used by OMERO web server
 
+For more details on OMERO web configuration, please refere to the [official documentation](https://hub.docker.com/r/openmicroscopy/omero-web/)
+
 ---
 
 ### Images repository
