@@ -6,11 +6,11 @@ export PATH="/opt/omero/web/venv3/bin:$PATH"
 python=/opt/omero/web/venv3/bin/python
 omero=/opt/omero/web/venv3/bin/omero
 
-TILES_OVERLAP="${TILES_OVERLAP:-}"
-TILES_FORMAT="${TILES_FORMAT:-}"
-JPEG_TILES_QUALITY="${JPEG_TILES_QUALITY:-}"
-SLIDE_LIMIT_BOUNDS="${SLIDE_LIMIT_BOUNDS:-}"
-TILES_SIZE="${TILES_SIZE:-}"
+TILES_OVERLAP="${TILES_OVERLAP:-1}"
+TILES_FORMAT="${TILES_FORMAT:-jpeg}"
+JPEG_TILES_QUALITY="${JPEG_TILES_QUALITY:-90}"
+SLIDE_LIMIT_BOUNDS="${SLIDE_LIMIT_BOUNDS:-True}"
+TILES_SIZE="${TILES_SIZE:-256}"
 
 if [ -n "$TILES_OVERLAP" ]; then
     echo "Setting tiles overlap to $TILES_OVERLAP"
