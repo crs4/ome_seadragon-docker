@@ -8,7 +8,7 @@ RUN yum -y install gcc-c++ openslide wget unzip python3-devel \
     && yum -y install nodejs \
     && npm install -g grunt
 
-ARG OME_SEADRAGON_VERSION=0.7.0
+ARG OME_SEADRAGON_VERSION=0.7.1
 
 RUN mkdir /opt/ome_web_plugins/ \
     && wget https://github.com/crs4/ome_seadragon/archive/v${OME_SEADRAGON_VERSION}.zip -P /opt/ome_web_plugins/ \
