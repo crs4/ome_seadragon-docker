@@ -28,6 +28,9 @@ RUN npm install \
 
 USER root
 
+RUN mkdir -p /data/array_datasets \
+    && chown -R omero-web /data/array_datasets/
+
 COPY resources/wait-for-it.sh /usr/local/bin/
 
 COPY resources/40-wait-for-omero.sh \
@@ -41,6 +44,7 @@ COPY resources/40-wait-for-omero.sh \
      resources/85-setup-gateway-user.sh \
      resources/86-setup-rendering-engines.sh \
      resources/87-setup-deepzoom-properties.sh \
+     resources/88-setup-datasets-repository.sh \
      resources/90-default-web-config-2.sh /startup/
 
 USER omero-web
