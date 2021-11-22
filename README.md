@@ -102,6 +102,12 @@ For more details on OMERO web configuration, please refere to the [official docu
 
 ---
 
+### Array Datasets repository
+
+**DATASETS_REPOSITORY** *(default /data/array_datasets/)* the folder containing the datasets managed as heatmaps by ome_seadragon
+
+---
+
 ## Examples
 
 A Docker compose example to run a complete ome_seadragon stack can be found [here](https://github.com/lucalianas/ome_seadragon_compose)
