@@ -8,7 +8,7 @@ RUN yum -y install gcc-c++ openslide wget unzip python3-devel \
     && yum -y install nodejs \
     && npm install -g grunt
 
-ARG OME_SEADRAGON_VERSION=0.7.1
+ARG OME_SEADRAGON_VERSION=0.8.0
 
 RUN mkdir /opt/ome_web_plugins/ \
     && wget https://github.com/crs4/ome_seadragon/archive/v${OME_SEADRAGON_VERSION}.zip -P /opt/ome_web_plugins/ \
@@ -19,7 +19,10 @@ RUN mkdir /opt/ome_web_plugins/ \
 
 WORKDIR /opt/ome_web_plugins/ome_seadragon/
 
-RUN /opt/omero/web/venv3/bin/pip install --upgrade -r requirements.txt
+USER root
+
+RUN /opt/omero/web/venv3/bin/pip install --upgrade pip \
+    && /opt/omero/web/venv3/bin/pip install --upgrade -r requirements.txt
 
 USER omero-web
 
