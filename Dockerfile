@@ -19,7 +19,10 @@ RUN mkdir /opt/ome_web_plugins/ \
 
 WORKDIR /opt/ome_web_plugins/ome_seadragon/
 
-RUN /opt/omero/web/venv3/bin/pip install --upgrade -r requirements.txt
+USER root
+
+RUN /opt/omero/web/venv3/bin/pip install --upgrade pip \
+    && /opt/omero/web/venv3/bin/pip install --upgrade -r requirements.txt
 
 USER omero-web
 
